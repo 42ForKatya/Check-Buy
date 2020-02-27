@@ -1,0 +1,32 @@
+<div>
+  <mdc-top-app-bar prominent>
+    <mdc-top-app-bar-row>
+      <mdc-top-app-bar-section align="start">
+        <button mdcTopAppBarNavIcon (click)="drawerOpenClose()" *ngIf="userService.user">
+          <mdc-icon>menu</mdc-icon>
+        </button>
+      </mdc-top-app-bar-section>
+      <mdc-top-app-bar-section align="center">
+        <img src="../../assets/logo.png" style="margin: auto;" height="150px" />
+      </mdc-top-app-bar-section>
+      <mdc-top-app-bar-section align="end" *ngIf="userService.user">
+        <mdc-icon mdcTopAppBarActionItem>face</mdc-icon>
+        <mdc-icon mdcTopAppBarActionItem (click)="onLogOut()">redo</mdc-icon>
+      </mdc-top-app-bar-section>
+    </mdc-top-app-bar-row>
+  </mdc-top-app-bar>
+
+  <mdc-drawer drawer="modal" #drawer style="margin-top: -8px;">
+    <mdc-drawer-header>
+      <h3 mdcDrawerTitle>Приложение Check&Buy</h3>
+      <h6 mdcDrawerSubtitle>Меню</h6>
+    </mdc-drawer-header>
+    <mdc-drawer-content>
+      <mdc-list>
+        <mdc-list-item *ngFor="let item of menuItems" [activated]="item.activated" (click)="onMenuItemClick(item)">
+          <mdc-icon mdcListItemGraphic *ngIf="item.icon">{{item.icon}}</mdc-icon>{{item.label}}
+        </mdc-list-item>
+      </mdc-list>
+    </mdc-drawer-content>
+  </mdc-drawer>
+</div>

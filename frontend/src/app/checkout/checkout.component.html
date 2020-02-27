@@ -1,0 +1,24 @@
+<div class="main-container">
+  <mdc-card class="demo-card" outlined>
+    <div class="demo-card-article-group-heading" mdcSubtitle2>Ваш чек</div>
+    <mdc-list-divider></mdc-list-divider>
+    <div *ngIf="cart && cart.length">
+      <div *ngFor="let item of cart">
+        <mdc-ripple class="demo-card-article">
+          <h2 class="demo-card-article__title" mdcHeadline5>{{item.title}}</h2>
+          <h2 class="demo-card-price" mdcHeadline5>Price: {{item.price}}</h2>
+          <mdc-card-action-buttons>
+            <button mdc-button mdcCardAction="button" (click)="onRemove(item)">Убрать из корзины</button>
+          </mdc-card-action-buttons>
+        </mdc-ripple>
+        <mdc-list-divider></mdc-list-divider>
+      </div>
+    </div>
+    <div>
+      <div class="demo-card-article-group-heading" mdcSubtitle2>К оплате: {{totalAmount}}</div>
+      <mdc-card-action-buttons>
+        <button mdc-button mdcCardAction="button" (click)="onCheckout()">Оплатить</button>
+      </mdc-card-action-buttons>
+    </div>
+  </mdc-card>
+</div>
