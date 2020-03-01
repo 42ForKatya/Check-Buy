@@ -1,19 +1,11 @@
 <div style="padding-top: 160px;">
   <div style="display: flex;align-content: center;align-items: center;flex-direction: column;">
-    <h2>Добавить продукт</h2>
+    <h2>Добавить новости</h2>
 
     <mdc-card class="demo-card form-container">
       <form [formGroup]="productForm" (ngSubmit)="onSubmit()" (keydown)="keyDownFunction($event)" enctype="multipart/form-data">
         <mdc-form-field fluid>
-          <mdc-text-field formControlName="title" label="Добавить продукт" outlined required></mdc-text-field>
-          <mdc-helper-text persistent validation>*Обязательно для ввода</mdc-helper-text>
-        </mdc-form-field>
-        <mdc-form-field fluid style="margin-top: 14px">
-          <mdc-text-field type="number" formControlName="quantity" label="Количество" outlined required></mdc-text-field>
-          <mdc-helper-text persistent validation>*Обязательно для ввода</mdc-helper-text>
-        </mdc-form-field>
-        <mdc-form-field fluid style="margin-top: 14px">
-          <mdc-text-field type="number" formControlName="price" label="Цена" outlined required></mdc-text-field>
+          <mdc-text-field formControlName="title" label="Заголовок" outlined required></mdc-text-field>
           <mdc-helper-text persistent validation>*Обязательно для ввода</mdc-helper-text>
         </mdc-form-field>
         <mdc-form-field fluid>

@@ -17,6 +17,7 @@ import { TopbarComponent } from './topbar/topbar.component';
 import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import { AddProductComponent } from './add-product/add-product.component';
+import {AddNewsComponent} from './add-news/add-news.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AddProductComponent } from './add-product/add-product.component';
     ProductDetailsComponent,
     CheckoutComponent,
     TopbarComponent,
-    AddProductComponent
+    AddProductComponent,
+    AddNewsComponent
   ],
   imports: [
     BrowserModule,

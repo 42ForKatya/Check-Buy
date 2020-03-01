@@ -25,11 +25,11 @@ export class AppComponent implements OnInit {
       this.router.navigateByUrl('/login');
     }
 
-    this.webService.getProducts().subscribe(res => {
+    /*this.webService.getProducts().subscribe(res => {
       this.webService.productsCache = res.products;
-    })
+    })*/
 
-    this.startNFCPolling();
+    // this.startNFCPolling();
   }
 
   startNFCPolling() {

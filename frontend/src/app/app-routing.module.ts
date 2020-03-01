@@ -7,6 +7,7 @@ import {ProductsComponent} from "./products/products.component";
 import {ProductDetailsComponent} from "./product-details/product-details.component";
 import {AddProductComponent} from "./add-product/add-product.component";
 import {CheckoutComponent} from "./checkout/checkout.component";
+import {AddNewsComponent} from './add-news/add-news.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'checkout',
     component: CheckoutComponent
+  },
+  {
+    path: 'add-news',
+    component: AddNewsComponent
   }
 ];
 

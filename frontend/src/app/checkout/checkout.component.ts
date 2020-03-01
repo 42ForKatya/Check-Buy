@@ -36,7 +36,7 @@ export class CheckoutComponent implements OnInit {
     }
 
     this.webService.checkout().subscribe(res => {
-      alert(`$${this.totalAmount} paid successfully`);
+      alert(`$${this.totalAmount} Оплачено`);
       console.log(res);
     })
   }

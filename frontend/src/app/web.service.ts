@@ -19,10 +19,15 @@ export class WebService {
   addToCart(product) {
     const index = this.cart.indexOf(product)
     if(index >= 0) {
-      return
+      return this.addToCardApi(product._id)
     }
 
     this.cart.push(product);
+    return this.addToCardApi(product._id)
+  }
+
+  addToCardApi(id) {
+    return this.http.post(`${this.url}/addToCart`, {id},{headers: {Authorization: 'Bearer ' + this.userService.user.token}})
   }
 
   removeFromCart(product) {
@@ -48,6 +53,14 @@ export class WebService {
     return this.http.post(`${this.url}/checkout`, this.cart,{headers: {Authorization: 'Bearer ' + this.userService.user.token}});
   }
 
+  removeProduct(id: string): Observable<any> {
+    return this.http.delete(`${this.url}/products?id=${id}`, {headers: {Authorization: 'Bearer ' + this.userService.user.token}});
+  }
+
+  removeNews(id: string): Observable<any> {
+    return this.http.delete(`${this.url}/news?id=${id}`, {headers: {Authorization: 'Bearer ' + this.userService.user.token}});
+  }
+
   addProduct(product, file: File): Observable<any> {
     const formData: any = new FormData();
     formData.append("title", product.title);
@@ -56,6 +69,14 @@ export class WebService {
     formData.append("price", product.price);
     formData.append("imageFile", file);
     return this.http.post(`${this.url}/products`, formData,{headers: {Authorization: 'Bearer ' + this.userService.user.token}});
+  }
+
+  addNews(product, file: File): Observable<any> {
+    const formData: any = new FormData();
+    formData.append("title", product.title);
+    formData.append("description", product.description);
+    formData.append("imageFile", file);
+    return this.http.post(`${this.url}/news`, formData,{headers: {Authorization: 'Bearer ' + this.userService.user.token}});
   }
 
 }

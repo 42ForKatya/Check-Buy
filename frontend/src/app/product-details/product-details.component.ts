@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Subject} from "rxjs";
 import {WebService} from "../web.service";
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-product-details',
@@ -13,7 +14,8 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private webService: WebService,
-              private router: Router) { }
+              private router: Router,
+              private _sanitizer: DomSanitizer,) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -29,5 +31,9 @@ export class ProductDetailsComponent implements OnInit {
 
   onCheckoutClick() {
     this.router.navigateByUrl('/checkout');
+  }
+
+  getImg(str) {
+    return this._sanitizer.bypassSecurityTrustResourceUrl('data:image/jpg;base64,' + str);
   }
 }

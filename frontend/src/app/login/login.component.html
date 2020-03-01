@@ -1,25 +1,25 @@
 <div style="margin-top: 160px;">
   <div style="display: flex;align-content: center;align-items: center;flex-direction: column;">
-    <h1>Добро пожаловать в Check&Buy!</h1>
-    <h3>Регистрация и вход</h3>
+    <h1>Добро пожаловать в магазин Check & Buy!</h1>
+    <h3>Войдите в приложение</h3>
 
     <mdc-card class="demo-card form-container">
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" (keydown)="keyDownFunction($event)">
         <mdc-form-field fluid>
-          <mdc-text-field formControlName="email" label="e-mail" outlined required></mdc-text-field>
-          <mdc-helper-text persistent validation>*Пожалуйста, введите email правильного формата</mdc-helper-text>
+          <mdc-text-field formControlName="email" label="Email" outlined required></mdc-text-field>
+          <mdc-helper-text persistent validation>*Обязательно для ввода, используйте корректный формат email</mdc-helper-text>
         </mdc-form-field>
         <mdc-form-field fluid style="margin-top: 14px">
           <mdc-text-field type="password" formControlName="password" label="Пароль" outlined required></mdc-text-field>
-          <mdc-helper-text persistent validation>*Пожалуйста, задайте пароль</mdc-helper-text>
+          <mdc-helper-text persistent validation>*Обязательно для ввода</mdc-helper-text>
         </mdc-form-field>
         <h4>
           {{errorText}}
         </h4>
         <mdc-card-actions>
           <mdc-card-action-buttons>
-            <button mdc-button mdcCardAction="button" (click)="goToRegister()">Регистрация</button>
-            <button mdc-button mdcCardAction="button" type="submit">Вход</button>
+            <button mdc-button mdcCardAction="button" (click)="goToRegister()">Зарегистрироваться</button>
+            <button mdc-button mdcCardAction="button" type="submit">Войти</button>
           </mdc-card-action-buttons>
         </mdc-card-actions>
       </form>

@@ -48,3 +48,5 @@ backend/uploads
 
 dist/
 frontend/dist
+backend/.idea/workspace.xml
+frontend/.idea/workspace.xml

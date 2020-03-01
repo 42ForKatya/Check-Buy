@@ -16,6 +16,11 @@
         </mdc-card-primary-action>
         <mdc-card-actions>
           <mdc-card-action-buttons>
+            <button mdc-button mdcCardAction="button" *ngIf="userService.user && userService.user.user.isAdmin" (click)="onProductRemove(item)">Убрать продукткы</button>
+          </mdc-card-action-buttons>
+        </mdc-card-actions>
+        <mdc-card-actions>
+          <mdc-card-action-buttons>
             <button mdc-button mdcCardAction="button" (click)="onAddToCartClick(item)">Добавить в корзину</button>
           </mdc-card-action-buttons>
         </mdc-card-actions>

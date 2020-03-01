@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         this.userService.loggedIn.emit()
         this.router.navigateByUrl('/news');
       }, err => {
-        this.errorText = 'some error occured..maybe email password not correct';
+        this.errorText = 'Произошла неизвестная ошибка';
       })
     }
   }

@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
         console.log(res);
         this.router.navigateByUrl('/login');
       }, err => {
-        this.errorText = 'some error occured..';
+        this.errorText = 'Произошла неизвестная ошибка';
       })
     }
   }

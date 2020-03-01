@@ -5,11 +5,11 @@ import {Router} from "@angular/router";
 import {WebService} from "../web.service";
 
 @Component({
-  selector: 'app-add-product',
-  templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.scss']
+  selector: 'app-add-news',
+  templateUrl: './add-news.component.html',
+  styleUrls: ['./add-news.component.scss']
 })
-export class AddProductComponent implements OnInit {
+export class AddNewsComponent implements OnInit {
   productForm: FormGroup
   errorText: string = ''
 
@@ -23,8 +23,6 @@ export class AddProductComponent implements OnInit {
     this.productForm = this.fb.group({
       title: ['', Validators.required],
       description: ['', Validators.required],
-      quantity: [0, Validators.required],
-      price: [0, Validators.required],
       imageFile: [null, Validators.required]
     });
   }
@@ -47,10 +45,10 @@ export class AddProductComponent implements OnInit {
     this.errorText = '';
 
     if (this.productForm.valid) {
-      this.webService.addProduct(this.productForm.value, this.productForm.value.imageFile).subscribe(res => {
-        alert('Продукт сохранен')
+      this.webService.addNews(this.productForm.value, this.productForm.value.imageFile).subscribe(res => {
+        alert('Новости добавлены')
       }, err => {
-        this.errorText = 'Произошла неизвестная ошибка';
+        this.errorText = 'Произошла неизвестаня ошибка';
       })
     }
   }

@@ -7,9 +7,10 @@
         </button>
       </mdc-top-app-bar-section>
       <mdc-top-app-bar-section align="center">
-        <img src="../../assets/logo.png" style="margin: auto;" height="150px" />
+        <img src="../../assets/logo.png" style="margin: auto;" height="120px" />
       </mdc-top-app-bar-section>
       <mdc-top-app-bar-section align="end" *ngIf="userService.user">
+        <mdc-icon mdcTopAppBarActionItem (click)="onNFCScan()">center_focus_strong</mdc-icon>
         <mdc-icon mdcTopAppBarActionItem>face</mdc-icon>
         <mdc-icon mdcTopAppBarActionItem (click)="onLogOut()">redo</mdc-icon>
       </mdc-top-app-bar-section>
@@ -18,7 +19,7 @@
 
   <mdc-drawer drawer="modal" #drawer style="margin-top: -8px;">
     <mdc-drawer-header>
-      <h3 mdcDrawerTitle>Приложение Check&Buy</h3>
+      <h3 mdcDrawerTitle>Приложение магазина Check & Buy</h3>
       <h6 mdcDrawerSubtitle>Меню</h6>
     </mdc-drawer-header>
     <mdc-drawer-content>
