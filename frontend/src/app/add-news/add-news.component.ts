@@ -48,7 +48,7 @@ export class AddNewsComponent implements OnInit {
       this.webService.addNews(this.productForm.value, this.productForm.value.imageFile).subscribe(res => {
         alert('Новости добавлены')
       }, err => {
-        this.errorText = 'Произошла неизвестаня ошибка';
+        this.errorText = 'Произошла неизвестная ошибка';
       })
     }
   }
